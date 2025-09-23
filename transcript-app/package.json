@@ -1,0 +1,29 @@
+{
+  "name": "transcript-application",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "frontend": "vite",
+    "backend": "npm run build-backend && node dist/server.js",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "build-backend": "tsc -p tsconfig.server.json",
+    "seed": "tsc -p tsconfig.server.json && node dist/seedUser.js"
+  },
+  "dependencies": {
+    "@google/genai": "^0.8.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/node": "^22.14.0",
+    "concurrently": "^9.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
